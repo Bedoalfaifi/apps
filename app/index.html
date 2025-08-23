@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فهد محمد - مطور تطبيقات ومواقع ويب متكاملة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .project p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project video {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            display: inline-block;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 1.8rem;
+            margin: 0 12px;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>فهد محمد</h1>
+        <p>مطور تطبيقات Flutter | مطور مواقع ويب تعريفية | خبرة في بناء تطبيقات iOS & Android وربطها بالـ API</p>
+    </header>
+
+    <section>
+        <h2>نبذة عني</h2>
+        <div class="about-content">
+            أنا مطور تطبيقات متخصص في **Flutter**، وأيضًا مطور مواقع ويب تعريفية عصرية للشركات والأفراد.
+            أمتلك خبرة في تصميم وتنفيذ تطبيقات عالية الجودة لأنظمة **iOS** و **Android** مع ربطها بخدمات الويب (API)
+            وإدارة قواعد البيانات. أهدف دائمًا إلى تقديم تجربة مستخدم سلسة واحترافية.
+        </div>
+    </section>
+
+    <section>
+        <h2>الخبرات العملية</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>تطوير التطبيقات</h3>
+                <p>تطوير تطبيقات Android و iOS باستخدام Flutter & Dart.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>تطوير مواقع ويب</h3>
+                <p>بناء مواقع ويب تعريفية حديثة ومتجاوبة باستخدام HTML, CSS, JS.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>قواعد البيانات</h3>
+                <p>التعامل مع MySQL و Firebase بكفاءة عالية.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>تصميم الواجهات</h3>
+                <p>بناء واجهات متجاوبة واحترافية (UI/UX).</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-plug"></i>
+                <h3>ربط API</h3>
+                <p>ربط التطبيقات والمواقع مع REST APIs لتبادل البيانات.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>إدارة الحالة</h3>
+                <p>استخدام GetX و MVC لتنظيم الكود.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>النشر على المتاجر</h3>
+                <p>رفع التطبيقات على Google Play و App Store.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>المهارات التقنية</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>لغات البرمجة</h3>
+                <p>Dart, Node.js, JavaScript</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>أدوات التطوير</h3>
+                <p>Flutter, Android Studio, Xcode, VS Code, Git/GitHub</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>قواعد البيانات</h3>
+                <p>Firebase, MySQL, SQLite</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>أنظمة التصميم</h3>
+                <p>MVC و Clean Architecture لبناء هيكلة قوية.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-credit-card"></i>
+                <h3>الدفع الإلكتروني</h3>
+                <p>دمج Apple Pay, Moyasar, Stripe داخل التطبيقات.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-location-dot"></i>
+                <h3>خدمات الموقع</h3>
+                <p>GPS وخدمات الخلفية Background Services.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>لوحات التحكم</h3>
+                <p>تطوير Dashboards متقدمة لإدارة البيانات.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>أبرز المشاريع</h2>
+        <p style="text-align: center; font-size: 1.1rem; color: var(--gray); margin-bottom: 40px;">
+            ألقِ نظرة على مجموعة من المشاريع التي قمت بتطويرها، حيث أجمع بين الأداء القوي والتصميم الأنيق لتقديم حلول رقمية مبتكرة تلبي احتياجات المستخدمين.
+        </p>
+        <div class="projects">
+            <div class="project">
+                <video controls autoplay muted loop>
+                    <source src="1.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+                <h3>تطبيق استشارات 💡</h3>
+                <p>
+                    تطبيق يربط المستشارين بالعملاء في مختلف المجالات، من الاستشارات الأسرية والتجارية إلى التغذية والقانونية. يتيح للمستخدمين حجز الاستشارات بسهولة والتواصل المباشر مع الخبراء.
+                </p>
+            </div>
+            
+            <div class="project">
+                <video controls autoplay muted loop>
+                    <source src="2.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+                <h3>تطبيق غسيل سيارات 🚗</h3>
+                <p>
+                    أطلق العنان لسيارتك ببريق جديد! هذا التطبيق يتيح للعملاء طلب خدمة غسيل السيارات المتنقلة أو الخارجية، مع نظام حجوزات مرن ودفع إلكتروني آمن. تجربة غسيل احترافية بين يديك.
+                </p>
+            </div>
+            
+            <div class="project">
+                <video controls autoplay muted loop>
+                    <source src="3.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+                <h3>تطبيق تحصيل الإيجارات 🏠</h3>
+                <p>
+                    حل رقمي متكامل لملاك العقارات يسهّل عملية تحصيل الإيجارات ومتابعة العقود بشكل آلي. يوفر لوحة تحكم ذكية لعرض حالة الدفعات وتواريخ استحقاق الإيجارات، مما يوفر الوقت والجهد.
+                </p>
+            </div>
+
+            <div class="project">
+                <video controls autoplay muted loop>
+                    <source src="4.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+                <h3>تطبيق المواقف 🅿️</h3>
+                <p>
+                    وداعاً للبحث عن موقف! تطبيق ذكي يتيح للمستخدمين حجز مواقف السيارات بسهولة، مع إمكانية التسجيل والدخول باستخدام رمز QR. نظام آمن وفعال لتجربة ركن سلسة.
+                </p>
+            </div>
+
+            <div class="project">
+                <video controls autoplay muted loop>
+                    <source src="5.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+                <h3>تطبيق توصيل طلبات 🛵</h3>
+                <p>
+                    تطبيق توصيل شامل يربط العملاء بالمطاعم والمتاجر المفضلة لديهم. يتميز بواجهة سهلة الاستخدام وتتبع مباشر للطلبات مع خيارات دفع متعددة. يضمن وصول طلباتك بسرعة ودقة.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.3rem; margin-bottom: 20px; font-weight: bold;">للتواصل معي</p>
+        <div class="social-icons">
+            <a href="mailto:bedo.dev2018@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/966548575598" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/فهد-الفيفي-093a8b2a9/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
