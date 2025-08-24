@@ -16,20 +16,20 @@
             --gray: #6c757d;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         header {
             background: var(--gradient);
             color: white;
@@ -38,7 +38,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         header::before {
             content: '';
             position: absolute;
@@ -50,13 +50,13 @@
             background-size: cover;
             background-position: center;
         }
-        
+
         header h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
             position: relative;
         }
-        
+
         header p {
             font-size: 1.2rem;
             opacity: 0.95;
@@ -64,13 +64,13 @@
             margin: 0 auto;
             position: relative;
         }
-        
+
         section {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
         }
-        
+
         h2 {
             font-size: 2.2rem;
             margin-bottom: 40px;
@@ -79,7 +79,7 @@
             position: relative;
             padding-bottom: 15px;
         }
-        
+
         h2::after {
             content: '';
             position: absolute;
@@ -91,13 +91,13 @@
             background: var(--gradient);
             border-radius: 2px;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
-        
+
         .card {
             background: white;
             border-radius: 12px;
@@ -108,7 +108,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .card::before {
             content: '';
             position: absolute;
@@ -119,16 +119,16 @@
             background: var(--gradient);
             transition: width 0.3s;
         }
-        
+
         .card:hover::before {
             width: 100%;
             opacity: 0.05;
         }
-        
+
         .card:hover {
             transform: translateY(-5px);
         }
-        
+
         .card i {
             font-size: 2.2rem;
             margin-bottom: 15px;
@@ -137,27 +137,27 @@
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
+
         .card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--dark);
             position: relative;
         }
-        
+
         .card p {
             font-size: 0.95rem;
             color: var(--gray);
             line-height: 1.6;
             position: relative;
         }
-        
+
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        
+
         .project {
             background: white;
             border-radius: 12px;
@@ -165,29 +165,29 @@
             border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.3s;
         }
-        
+
         .project:hover {
             transform: translateY(-5px);
         }
-        
+
         .project h3 {
             margin-bottom: 10px;
             color: var(--primary);
             font-size: 1.3rem;
         }
-        
+
         .project p {
             color: var(--gray);
             line-height: 1.6;
             font-size: 0.95rem;
         }
-        
+
         .project video {
             width: 100%;
             border-radius: 8px;
             margin-bottom: 15px;
         }
-        
+
         footer {
             background: var(--dark);
             color: white;
@@ -195,7 +195,7 @@
             padding: 40px 20px;
             margin-top: 60px;
         }
-        
+
         footer a {
             color: white;
             text-decoration: none;
@@ -203,21 +203,21 @@
             display: inline-block;
             transition: transform 0.3s, color 0.3s;
         }
-        
+
         footer a:hover {
             color: var(--accent);
             transform: translateY(-3px);
         }
-        
+
         .social-icons {
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             font-size: 1.8rem;
             margin: 0 12px;
         }
-        
+
         .about-content {
             text-align: center;
             max-width: 800px;
@@ -226,20 +226,20 @@
             color: var(--gray);
             line-height: 1.8;
         }
-        
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
             }
-            
+
             header p {
                 font-size: 1rem;
             }
-            
+
             h2 {
                 font-size: 1.8rem;
             }
-            
+
             .grid {
                 grid-template-columns: 1fr;
             }
@@ -256,8 +256,8 @@
     <section>
         <h2>نبذة عني</h2>
         <div class="about-content">
-            أنا مطور تطبيقات متخصص في Flutter، وأيضًا مطور مواقع ويب تعريفية عصرية للشركات والأفراد.
-            أمتلك خبرة في تصميم وتنفيذ تطبيقات عالية الجودة لأنظمة iOS و Android مع ربطها بخدمات الويب (API)
+            أنا مطور تطبيقات متخصص في **Flutter**، وأيضًا مطور مواقع ويب تعريفية عصرية للشركات والأفراد.
+            أمتلك خبرة في تصميم وتنفيذ تطبيقات عالية الجودة لأنظمة **iOS** و **Android** مع ربطها بخدمات الويب (API)
             وإدارة قواعد البيانات. أهدف دائمًا إلى تقديم تجربة مستخدم سلسة واحترافية.
         </div>
     </section>
@@ -269,11 +269,6 @@
                 <i class="fas fa-mobile-alt"></i>
                 <h3>تطوير التطبيقات</h3>
                 <p>تطوير تطبيقات Android و iOS باستخدام Flutter & Dart.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-globe"></i>
-                <h3>تطوير مواقع ويب</h3>
-                <p>بناء مواقع ويب تعريفية حديثة ومتجاوبة باستخدام HTML, CSS, JS.</p>
             </div>
             <div class="card">
                 <i class="fas fa-database"></i>
@@ -309,7 +304,7 @@
             <div class="card">
                 <i class="fas fa-code"></i>
                 <h3>لغات البرمجة</h3>
-                <p>Dart, Node.js, JavaScript</p>
+                <p>Dart, Node.js</p>
             </div>
             <div class="card">
                 <i class="fas fa-laptop-code"></i>
@@ -352,7 +347,7 @@
         <div class="projects">
             <div class="project">
                 <video controls autoplay muted loop>
-                    <source src="RPReplay_Final1703544572.mp4" type="video/mp4">
+                    <source src="1.mp4" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
                 <h3>تطبيق استشارات 💡</h3>
@@ -363,7 +358,7 @@
             
             <div class="project">
                 <video controls autoplay muted loop>
-                    <source src="RPReplay_Final1714139464.mp4" type="video/mp4">
+                    <source src="2.mp4" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
                 <h3>تطبيق غسيل سيارات 🚗</h3>
@@ -374,7 +369,7 @@
             
             <div class="project">
                 <video controls autoplay muted loop>
-                    <source src="RPReplay_Final1729723197.mp4" type="video/mp4">
+                    <source src="3.mp4" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
                 <h3>تطبيق تحصيل الإيجارات 🏠</h3>
@@ -385,7 +380,7 @@
 
             <div class="project">
                 <video controls autoplay muted loop>
-                    <source src="ScreenRecording_٠٢-٠٦-٢٠٢٥ ١٠-٤٤-١٦_1.mp4" type="video/mp4">
+                    <source src="4.mp4" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
                 <h3>تطبيق المواقف 🅿️</h3>
@@ -396,7 +391,7 @@
 
             <div class="project">
                 <video controls autoplay muted loop>
-                    <source src="ScreenRecording_٠٨-٢١-٢٠٢٥ ١٤-٢٧-٢١_1.mp4" type="video/mp4">
+                    <source src="5.mp4" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
                 <h3>تطبيق توصيل طلبات 🛵</h3>
